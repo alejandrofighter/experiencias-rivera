@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explora Riviera Maya</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+
+<body>
+  <header class="encabezado">
+    <div>
+      <h1>Explora Riviera Maya</h1>
+      <p>Experiencias naturales y culturales</p>
+    </div>
+  </header>
+
+  <main class="contenedor">
+    <div class="herramientas">
+      <label for="buscador" class="oculto">Buscar experiencias por nombre</label>
+      <input type="search" id="buscador" placeholder="Buscar experiencias por nombre..." autocomplete="off">
+      <button id="ordenar" type="button" aria-pressed="false">Precio: menor a mayor</button>
+      <a href="#reservaciones" class="enlace-reservaciones">Mis reservaciones (<span id="contador-enlace">0</span>)</a>
+    </div>
+
+    <section class="panel">
+      <div>
+        <h2>Experiencias disponibles</h2>
+        <p id="contador">0 experiencias encontradas</p>
+      </div>
+      <div class="filtros" aria-label="Filtros del catálogo">
+        <button class="activo" data-categoria="todas">Todas</button>
+        <button data-categoria="naturaleza">Naturaleza</button>
+        <button data-categoria="cultura">Cultura</button>
+        <button data-categoria="aventura">Aventura</button>
+        <button data-categoria="gastronomia">Gastronomía</button>
+      </div>
+    </section>
+
+    <section id="catalogo" class="catalogo"></section>
+
+    <section id="reservaciones" class="reservaciones">
+      <div class="reservaciones-encabezado">
+        <div>
+          <h2>Mis reservaciones</h2>
+          <p id="contador-reservaciones">0 reservaciones</p>
+        </div>
+        <button id="eliminar-todas" class="peligro" type="button">Eliminar todas</button>
+      </div>
+      <div id="lista-reservaciones" class="lista-reservaciones"></div>
+    </section>
+  </main>
+
+  <div id="aviso" class="aviso" role="status" aria-live="polite"></div>
+
+  <footer><p>Proyecto académico de desarrollo front-end</p></footer>
+</body>
+
+</html>
